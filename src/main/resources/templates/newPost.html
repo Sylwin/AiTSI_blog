@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="common/header :: blog-header"></head>
+
+<body>
+
+<nav th:replace="common/header :: navbar"></nav>
+
+<header class="masthead" style="background-image: url('/blog/img/newPost.jpg')">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+                <div class="page-heading">
+                    <h1>Add New Post</h1>
+                    <span class="subheading">Tell us about your newest adventure.</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-10 col-sm-offset-1 mx-auto">
+            <form method="post" th:action="@{/blog/newPost}" enctype="multipart/form-data">
+                <fieldset>
+                    <div class="form-group">
+                        <label for="title">Title</label>
+                        <input type="text" class="form-control" id="title" placeholder="Post title"
+                               name="title" th:value="${title}" required="required"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="subtitle">Subtitle</label>
+                        <input type="text" class="form-control" id="subtitle" placeholder="Post subtitle"
+                               name="subtitle" th:value="${subtitle}" required="required"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="paragraphText">Post Text</label>
+                        <textarea class="form-control" id="paragraphText" rows="14"
+                                  name="postText" th:value="${postText}" required="required"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="backgroundPhoto">Background Photo</label>
+                        <input type="file" class="form-control-file" id="backgroundPhoto" aria-describedby="photoHelp"
+                               data-classButton="btn btn-primary" data-input="false" data-classIcon="icon-plus" data-buttonText="Your label here."
+                               accept="image/png, image/jpeg" name="backgroundPhoto" th:value="${backgroundPhoto}"
+                               required="required"/>
+                        <small id="photoHelp" class="form-text text-muted">.jpg and .png accepted, max: 5MB</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="photos">Photos</label>
+                        <input type="file" class="form-control-file" id="photos" aria-describedby="fileHelp"
+                               multiple="multiple" accept="image/png, image/jpeg" name="photos" th:value="${photos}"/>
+                        <small id="fileHelp" class="form-text text-muted">.jpg and .png accepted, max: 5MB</small>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Add</button>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<footer th:replace="common/header :: footer"></footer>
+
+<div th:replace="common/header :: bottom-scripts">
+</div>
+
+</body>
+</html>

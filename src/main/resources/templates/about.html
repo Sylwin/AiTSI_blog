@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="common/header :: blog-header"></head>
+
+<body>
+
+<nav th:replace="common/header :: navbar"></nav>
+
+<header class="masthead" th:style="${blog.aboutPhoto} ? 'background-image:url(' + @{'data:image/jpeg;base64,'+${blog.generateBase64ImageAbout()}} + ');' : 'background-color: #3f3f3f;'">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+                <div class="page-heading">
+                    <h1>About Me</h1>
+                    <span class="subheading" th:text="${blog.aboutMe}"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="container">
+    <div th:if="${loggedIn}" class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+            <form th:action="@{/blog/editAbout}">
+                <button type="submit" style="opacity: 0.7;" class="col-md-2 btn btn-primary btn-log pull-right">Edit</button>
+            </form>
+        </div>
+    </div>
+    <hr/>
+    <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+            <strong>My email: </strong><span th:utext="${user.email}"></span>
+        </div>
+    </div>
+    <hr/>
+    <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+            <span th:utext="${#strings.replace(blog.aboutMeSubtitle, '&#10;', '&lt;br /&gt;')}"></span>
+        </div>
+    </div>
+</div>
+
+<hr/>
+
+<footer th:replace="common/header :: footer"></footer>
+
+<div th:replace="common/header :: bottom-scripts"></div>
+
+</body>
+</html>

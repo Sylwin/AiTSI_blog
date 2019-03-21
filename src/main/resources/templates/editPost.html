@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="common/header :: blog-header"></head>
+
+<body>
+
+<nav th:replace="common/header :: navbar"></nav>
+
+<header class="masthead" th:style="${chosenPost.backgroundPhoto} ? 'background-image:url(' + @{'data:image/jpeg;base64,'+${chosenPost.generateBase64Image()}} + ');' : 'background-color: #3f3f3f;'">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 col-md-12 mx-auto">
+                <div class="post-heading">
+                    <h1><span th:text="${chosenPost.title}"></span> </h1>
+                    <h2 class="subheading"><span th:text="${chosenPost.subtitle}"></span> </h2>
+                    <span class="meta">Posted by
+                        <a th:href="@{/blog}" th:text="${user.username}"></a>
+                        on <span data-th-text="${#dates.format(chosenPost.creationDate, 'MM/dd/yyyy')}"></span></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-10 col-sm-offset-1 mx-auto">
+                <form method="post" th:action="@{'/blog/editPost/' + ${chosenPost.id}}" enctype="multipart/form-data">
+                    <fieldset>
+                        <div class="form-group">
+                            <label for="title">Title</label>
+                            <textarea class="form-control" id="title" rows="1" th:text="${chosenPost.title}"
+                                      name="title" th:value="${title}" required="required"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="subtitle">Subtitle</label>
+                            <textarea class="form-control" id="subtitle" rows="1" th:text="${chosenPost.subtitle}"
+                                      name="subtitle" th:value="${subtitle}" required="required"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="postText">Text about me</label>
+                            <textarea class="form-control" id="postText" rows="14" th:text="${chosenPost.postText}"
+                                      name="postText" th:value="${postText}" required="required"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="backgroundPhoto">Change background photo</label>
+                            <input type="file" class="form-control-file" id="backgroundPhoto" aria-describedby="photoHelp"
+                                   accept="image/png, image/jpeg" name="backgroundPhoto" th:value="${backgroundPhoto}"/>
+                            <small id="photoHelp" class="form-text text-muted">.jpg and .png accepted, max: 5MB</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="photos">Add new photos</label>
+                            <input type="file" class="form-control-file" id="photos" aria-describedby="fileHelp"
+                                   multiple="multiple" accept="image/png, image/jpeg" name="photos" th:value="${photos}"/>
+                            <small id="fileHelp" class="form-text text-muted">.jpg and .png accepted, max: 5MB</small>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Save</button>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+</article>
+
+<hr/>
+
+<footer th:replace="common/header :: footer"></footer>
+
+<div th:replace="common/header :: bottom-scripts"></div>
+
+</body>
+</html>
