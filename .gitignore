@@ -19,7 +19,7 @@
 ### NetBeans ###
 /nbproject/private/
 /nbbuild/
-/dist/
+/static/
 /nbdist/
 /.nb-gradle/
 /build/
