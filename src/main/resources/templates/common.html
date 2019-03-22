@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="head">
+    <meta charset="UTF-8">
+    <title>Traveller blog</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.1/examples/album/">
+    <link href="/css/bootstrap.css" rel="stylesheet">
+    <link href="/css/carousel.css" rel="stylesheet">
+</head>
+<body>
+
+<footer th:fragment="footer" class="text-muted">
+    <div class="container">
+        <p class="float-right">
+            <a href="#">Back to top</a>
+        </p>
+        <p>Album example is &copy; Bootstrap, but please download and customize it for yourself!</p>
+        <p>New to Bootstrap? <a href="../../">Visit the homepage</a> or read our <a href="../../getting-started/">getting
+            started guide</a>.</p>
+    </div>
+</footer>
+
+<div th:fragment="bottom-scripts">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+    <script src="/js/popper.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/holder.min.js"></script>
+</div>
+</body>
+</html>
