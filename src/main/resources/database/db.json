@@ -1,0 +1,60 @@
+{
+  "authors": [
+    {
+      "id": "1",
+      "firstName": "John",
+      "lastName": "Smith",
+      "description": "First blog author's description. Nunc molestie tellus quis magna pulvinar elementum. Praesent sodales sodales faucibus. Etiam nulla libero, commodo eget nibh in, viverra porta ante. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed scelerisque feugiat ipsum nec tempor."
+    },
+    {
+      "id": "2",
+      "firstName": "Mary",
+      "lastName": "Smith",
+      "description": "Second blog author's description. Maecenas et quam tortor. In a leo ligula. Quisque sit amet tincidunt eros. Vestibulum eget dictum metus. Curabitur fermentum tortor nec finibus ornare. Pellentesque bibendum enim non risus lobortis, id pulvinar massa interdum. Phasellus a diam et risus aliquet facilisis sed quis lacus."
+    }
+  ],
+  "posts": [
+    {
+      "id": "1",
+      "title": "First adventure",
+      "postText": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean porttitor efficitur purus, ut commodo ipsum. Curabitur cursus, ex eu aliquam congue, erat nibh mattis nisi, quis interdum mi ipsum eget lorem. Cras quis quam ligula. Aliquam erat volutpat. Donec ornare varius risus, eget aliquet nulla tempus at. Sed congue nunc lobortis, pulvinar nunc id, fringilla odio. Vestibulum eleifend, mauris quis sodales porttitor, est elit molestie nisi, quis dictum augue ipsum non erat. Etiam dignissim dictum est. Proin vulputate in lorem ut imperdiet. Curabitur ut facilisis nisi."
+    },
+    {
+      "id": "2",
+      "title": "Second adventure",
+      "postText": "Nullam at urna consectetur, convallis risus at, volutpat risus. Mauris ornare eu ligula sit amet ultricies. Pellentesque venenatis sapien a erat vehicula, ac pellentesque elit scelerisque. Mauris luctus suscipit mi, ut vulputate arcu interdum mollis. Proin vel lorem justo. Morbi venenatis ullamcorper eros, sit amet pharetra elit posuere at. Proin ultrices, eros vitae semper dictum, ante ex euismod lectus, vitae lobortis ante elit non diam. Duis a augue commodo, dignissim dolor quis, vulputate quam. Praesent semper non augue a ullamcorper. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Integer erat urna, dictum congue velit quis, elementum mollis dolor. Phasellus aliquet interdum tortor, eu lacinia eros scelerisque sit amet. Vivamus non nisl sit amet arcu hendrerit hendrerit non fermentum dolor. Praesent ultrices turpis in dui vestibulum mattis."
+    },
+    {
+      "id": "3",
+      "title": "Third adventure",
+      "postText": "Nunc vel fermentum libero. Nulla faucibus, nibh eget bibendum consequat, mi orci lobortis tellus, eu luctus purus tortor et metus. Aliquam erat volutpat. Nunc consequat purus nulla, vel eleifend ipsum sollicitudin et. In sagittis, mauris ac tincidunt molestie, arcu diam pharetra dolor, eget sagittis felis mi sed dolor. Sed vitae ullamcorper urna. Praesent molestie metus vitae tortor aliquet interdum. Ut mattis aliquet lorem eget ullamcorper. Morbi ornare eleifend dolor, in maximus justo consectetur a. Mauris pulvinar sodales erat. Sed eu malesuada ex, non dapibus nisi. Mauris nec sapien commodo, vehicula magna et, sodales quam. Integer varius est ac felis facilisis tristique."
+    },
+    {
+      "id": "4",
+      "title": "Fourth adventure",
+      "postText": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean porttitor efficitur purus, ut commodo ipsum. Curabitur cursus, ex eu aliquam congue, erat nibh mattis nisi, quis interdum mi ipsum eget lorem. Cras quis quam ligula. Aliquam erat volutpat. Donec ornare varius risus, eget aliquet nulla tempus at. Sed congue nunc lobortis, pulvinar nunc id, fringilla odio. Vestibulum eleifend, mauris quis sodales porttitor, est elit molestie nisi, quis dictum augue ipsum non erat. Etiam dignissim dictum est. Proin vulputate in lorem ut imperdiet. Curabitur ut facilisis nisi."
+    },
+    {
+      "id": "5",
+      "title": "Fifth adventure",
+      "postText": "Nunc vel fermentum libero. Nulla faucibus, nibh eget bibendum consequat, mi orci lobortis tellus, eu luctus purus tortor et metus. Aliquam erat volutpat. Nunc consequat purus nulla, vel eleifend ipsum sollicitudin et. In sagittis, mauris ac tincidunt molestie, arcu diam pharetra dolor, eget sagittis felis mi sed dolor. Sed vitae ullamcorper urna. Praesent molestie metus vitae tortor aliquet interdum. Ut mattis aliquet lorem eget ullamcorper. Morbi ornare eleifend dolor, in maximus justo consectetur a. Mauris pulvinar sodales erat. Sed eu malesuada ex, non dapibus nisi. Mauris nec sapien commodo, vehicula magna et, sodales quam. Integer varius est ac felis facilisis tristique."
+    }
+  ],
+  "headlines": [
+      {
+        "id": "1",
+        "title": "First headline.",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eu ornare lorem, vitae commodo purus. Nulla suscipit at lectus non convallis. Donec fermentum lacus sed sodales laoreet. Mauris sed quam hendrerit nisi condimentum consequat."
+      },
+      {
+        "id": "2",
+        "title": "Second headline.",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eu ornare lorem, vitae commodo purus. Nulla suscipit at lectus non convallis. Donec fermentum lacus sed sodales laoreet. Mauris sed quam hendrerit nisi condimentum consequat."
+      },
+      {
+        "id": "3",
+        "title": "Third headline.",
+        "text": "Mauris dapibus lorem eu ex feugiat, et aliquet elit placerat. Nulla elementum massa dolor, in pellentesque orci pulvinar nec. Sed ut libero turpis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos."
+      }
+  ]
+}

@@ -30,20 +30,11 @@
     <div th:replace="header :: carousel"></div>
 
     <div class="container marketing">
-        <div class="row anchor" id="about">
-            <div class="col-lg-4 offset-lg-2">
-                <img class="rounded-circle" width="160" height="150" th:src="@{/img/author1.jpg}"/>
-                <h2>John Smith</h2>
-                <p>First blog author's description<br>Nunc molestie tellus quis magna pulvinar elementum. Praesent sodales sodales faucibus.
-                    Etiam nulla libero, commodo eget nibh in, viverra porta ante. Orci varius natoque penatibus et magnis dis
-                    parturient montes, nascetur ridiculus mus. Sed scelerisque feugiat ipsum nec tempor. </p>
-            </div>
-            <div class="col-lg-4">
-                <img class="rounded-circle" width="160" height="150" th:src="@{/img/author2.jpg}"/>
-                <h2>Mary Smith</h2>
-                <p>Second blog author's description<br>Maecenas et quam tortor. In a leo ligula. Quisque sit amet tincidunt eros.
-                    Vestibulum eget dictum metus. Curabitur fermentum tortor nec finibus ornare. Pellentesque bibendum
-                    enim non risus lobortis, id pulvinar massa interdum. Phasellus a diam et risus aliquet facilisis sed quis lacus. </p>
+        <div class="row anchor offset-lg-2" id="about">
+            <div data-th-each="author : ${authors}" class="col-lg-4">
+                <img class="rounded-circle" width="160" height="150" th:src="@{${'/img/author' + author.id + '.jpg'}}"/>
+                <h2 th:text="${author.firstName + ' ' + author.lastName}"></h2>
+                <p th:text="${author.description}"></p>
             </div>
         </div>
         <div class="album py-5 bg-light">
