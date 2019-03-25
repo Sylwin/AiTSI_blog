@@ -6,12 +6,14 @@ public class Author {
     private String firstName;
     private String lastName;
     private String description;
+    private String photo;
 
-    public Author(String id, String firstName, String lastName, String description) {
+    public Author(String id, String firstName, String lastName, String description, String photo) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.description = description;
+        this.photo = photo;
     }
 
     public String getId() {
@@ -44,5 +46,13 @@ public class Author {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public String getPhoto() {
+        return photo;
+    }
+
+    public void setPhoto(String photo) {
+        this.photo = photo;
     }
 }

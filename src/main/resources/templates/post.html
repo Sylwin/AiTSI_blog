@@ -2,14 +2,80 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
 <head th:replace="common :: head"></head>
+<script type="text/javascript" src="/js/custom.js"></script>
 
 <body>
     <header th:replace="home :: header"></header>
 
+    <section class="jumbotron text-center post-back"> <!-- th:style="'background-image: url(/img/' + ${post.mainPhoto} + ');'"> -->
+            <div class="container post-title">
+                <h1 class="jumbotron-heading" th:text="${post.title} + ' - ' + ${post.country} + '!'"></h1>
+                <p class="lead" th:text="${#strings.substringBefore(post.postText, '.')}"></p>
+            </div>
+    </section>
+
+    <div class="container-fluid">
+        <div class="row">
+            <a th:if="${post.id  != '1'}" class="text-left col-md-6" th:href="@{'/post/' + ${post.id - 1}}">
+                <img class="" th:src="'/img/left.png'" alt="Left Arrow" style="width: 50px; height: 50px;"/>Previous
+            </a>
+            <a th:if="${post.id  != '5'}" class="text-right"
+               th:classappend="${post.id  != '1'}? 'col-md-6' : 'col-md-12'" th:href="@{'/post/' + ${post.id - (-1)}}">
+               Next<img class="" th:src="'/img/right.png'" alt="Left Arrow" style="width: 50px; height: 50px;"/>
+            </a>
+        </div>
+    </div>
+
     <div class="container">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eu ornare lorem, vitae commodo
-            purus. Nulla suscipit at lectus non convallis. Donec fermentum lacus sed sodales laoreet.
-            Mauris sed quam hendrerit nisi condimentum consequat.</p>
+        <div>
+            <p th:utext="${#strings.replace(post.postText, '&#10;', '&lt;br /&gt;&lt;br /&gt;')}"></p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="row">
+                <div data-th-each="photo : ${post.photos}" class="col-lg-3 col-md-4 col-xs-6 thumb">
+                    <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title=""
+                       th:src="'/img/' + ${photo}" data-target="#image-gallery">
+                        <img class="img-thumbnail" th:src="'/img/' + ${photo}" alt="Another alt text">
+                    </a>
+                </div>
+            </div>
+
+            <div class="modal fade" id="image-gallery" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title" id="image-gallery-title"></h4>
+                            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <img id="image-gallery-image" class="img-responsive col-md-12" src="">
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary float-left" id="show-previous-image"><i class="fa fa-arrow-left"></i>
+                            </button>
+                            <button type="button" id="show-next-image" class="btn btn-secondary float-right"><i class="fa fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row">
+            <a th:if="${post.id  != '1'}" class="text-left col-md-6" th:href="@{'/post/' + ${post.id - 1}}">
+                <img class="" th:src="'/img/left.png'" alt="Left Arrow" style="width: 50px; height: 50px;"/>Previous
+            </a>
+            <a th:if="${post.id  != '5'}" class="text-right"
+               th:classappend="${post.id  != '1'}? 'col-md-6' : 'col-md-12'" th:href="@{'/post/' + ${post.id - (-1)}}">
+                Next<img class="" th:src="'/img/right.png'" alt="Left Arrow" style="width: 50px; height: 50px;"/>
+            </a>
+        </div>
     </div>
 
     <footer th:replace="common :: footer"></footer>

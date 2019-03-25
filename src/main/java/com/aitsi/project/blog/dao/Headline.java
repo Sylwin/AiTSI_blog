@@ -5,11 +5,13 @@ public class Headline {
     private String id;
     private String title;
     private String text;
+    private String photo;
 
-    public Headline(String id, String title, String text) {
+    public Headline(String id, String title, String text, String photo) {
         this.id = id;
         this.title = title;
         this.text = text;
+        this.photo = photo;
     }
 
     public String getId() {
@@ -36,4 +38,11 @@ public class Headline {
         this.text = text;
     }
 
+    public String getPhoto() {
+        return photo;
+    }
+
+    public void setPhoto(String photo) {
+        this.photo = photo;
+    }
 }

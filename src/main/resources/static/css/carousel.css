@@ -3,19 +3,6 @@ body {
     color: #5a5a5a;
 }
 
-.custom-header {
-    color: #5d0b89;
-}
-
-img {
-    object-fit: cover;
-}
-
-.anchor {
-    padding-top: 70px;
-    margin-top: -70px;
-}
-
 .carousel {
     margin-bottom: 4rem;
 }

@@ -13,6 +13,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 @Repository
@@ -45,7 +46,8 @@ public class Reader {
         return new Author(author.get("id").toString(),
                             author.get("firstName").toString(),
                             author.get("lastName").toString(),
-                            author.get("description").toString());
+                            author.get("description").toString(),
+                            author.get("photo").toString());
     }
 
     public List<Post> retrievePosts() {
@@ -55,13 +57,27 @@ public class Reader {
             Post p = mapJsonToPostObject((JSONObject) post);
             postsList.add(p);
         }
+        Collections.reverse(postsList);
         return postsList;
     }
 
     private Post mapJsonToPostObject(JSONObject post) {
         return new Post(post.get("id").toString(),
                         post.get("title").toString(),
-                        post.get("postText").toString());
+                        post.get("country").toString(),
+                        post.get("postText").toString(),
+                        post.get("mainPhoto").toString(),
+                        retrievePhotos(post),
+                        post.get("date").toString());
+    }
+
+    private List<String> retrievePhotos(JSONObject post) {
+        JSONArray photos = (JSONArray) post.get("photos");
+        List<String> photosList = new ArrayList<>();
+        for (Object photo : photos) {
+            photosList.add(String.valueOf(photo));
+        }
+        return photosList;
     }
 
     public List<Headline> retrieveHeadlines() {
@@ -77,7 +93,8 @@ public class Reader {
     private Headline mapJsonToHeadlineObject(JSONObject headline) {
         return new Headline(headline.get("id").toString(),
                             headline.get("title").toString(),
-                            headline.get("text").toString());
+                            headline.get("text").toString(),
+                            headline.get("photo").toString());
     }
 
 }

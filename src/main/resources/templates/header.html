@@ -12,12 +12,11 @@
         </ol>
         <div class="carousel-inner">
             <div data-th-each="headline : ${headlines}" class="carousel-item" th:classappend="${headline.id  == '1' } ? 'active'">
-                <img class="first-slide" th:src="@{${'/img/' + headline.id + '.jpg'}}" alt="First slide"/>
+                <img class="first-slide covered" th:src="@{${'/img/' + headline.photo}}" alt="First slide"/>
                 <div class="container">
-                    <div class="carousel-caption">
+                    <div class="carousel-caption bottom-offset">
                         <h1 th:text="${headline.title}"></h1>
                         <p th:text="${headline.text}"></p>
-                        <p><a class="btn btn-lg btn-primary" th:href="@{/post}">Read more</a></p>
                     </div>
                 </div>
             </div>

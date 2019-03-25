@@ -34,8 +34,4 @@ public class HomeController {
 
         return "home";
     }
-
-    @RequestMapping("/post")
-    public String getLoginPage() {
-        return "post"; }
 }
