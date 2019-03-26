@@ -15,15 +15,6 @@
     box-shadow: none !important;
 }
 
-#image-gallery .modal-footer{
-    display: block;
-}
-
-.thumb{
-    margin-top: 15px;
-    margin-bottom: 15px;
-}
-
 .custom-header {
     color: #5d0b89;
 }
