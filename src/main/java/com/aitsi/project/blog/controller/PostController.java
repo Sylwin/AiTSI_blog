@@ -21,6 +21,7 @@ public class PostController {
         Post post = postService.findById(id);
         model.addAttribute("post" , post);
 
-        return "post"; }
+        return "post";
+    }
 
 }

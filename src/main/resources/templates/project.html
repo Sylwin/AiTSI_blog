@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="common :: head">
+</head>
+<body th:style="'background-color: #fcefd6;'">
+<header th:replace="home :: header"></header>
+
+<section class="jumbotron text-center post-back">
+    <div class="container post-title">
+        <h1 class="jumbotron-heading">O projekcie</h1>
+    </div>
+</section>
+
+<div class="container">
+    <div style="margin-top: 40px; margin-bottom: 70px;">
+        <p>Opis projektu</p>
+    </div>
+</div>
+
+<footer th:replace="common :: footer"></footer>
+<div th:replace="common :: bottom-scripts"></div>
+</body>
+</html>

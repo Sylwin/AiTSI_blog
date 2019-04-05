@@ -21,6 +21,12 @@
                         <li class="nav-item">
                             <a class="nav-link" href="#posts" th:href="@{/#posts}">Posts</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#project" th:href="@{/#project}">O projekcie</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" th:href="@{'/project'}">O projekcie</a>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -63,6 +69,12 @@
             </div>
         </div>
     </div>
+
+    <div class="container" id="project">
+        O projekcie
+    </div>
+
+
 </main>
 
 <footer th:replace="common :: footer"></footer>

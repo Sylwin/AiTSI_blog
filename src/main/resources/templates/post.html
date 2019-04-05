@@ -3,10 +3,10 @@
 
 <head th:replace="common :: head">
 </head>
-<body>
+<body th:style="'background-color: #fcefd6;'">
     <header th:replace="home :: header"></header>
 
-    <section class="jumbotron text-center post-back"> <!-- th:style="'background-image: url(/img/' + ${post.mainPhoto} + ');'"> -->
+    <section class="jumbotron text-center post-back">
             <div class="container post-title">
                 <h1 class="jumbotron-heading" th:text="${post.title} + ' - ' + ${post.country} + '!'"></h1>
                 <p class="lead" th:text="${#strings.substringBefore(post.postText, '.')}"></p>
@@ -16,22 +16,24 @@
     <div class="container-fluid">
         <div class="row">
             <a th:if="${post.id  != '1'}" class="text-left col-md-6" th:href="@{'/post/' + ${post.id - 1}}">
-                <img class="" th:src="'/img/left.png'" alt="Left Arrow" style="width: 50px; height: 50px;"/>Previous
+                <img class="" th:src="'/img/left.png'" alt="Left Arrow" style="width: 50px; height: 50px;"/>PREVIOUS
+                ADVENTURE
             </a>
             <a th:if="${post.id  != '5'}" class="text-right"
                th:classappend="${post.id  != '1'}? 'col-md-6' : 'col-md-12'" th:href="@{'/post/' + ${post.id - (-1)}}">
-               Next<img class="" th:src="'/img/right.png'" alt="Left Arrow" style="width: 50px; height: 50px;"/>
+               NEXT ADVENTURE<img class="" th:src="'/img/right.png'" alt="Left Arrow" style="width: 50px;
+               height: 50px;"/>
             </a>
         </div>
     </div>
 
     <div class="container">
-        <div>
+        <div style="margin-top: 40px; margin-bottom: 70px;">
             <p th:utext="${#strings.replace(post.postText, '&#10;', '&lt;br /&gt;&lt;br /&gt;')}"></p>
         </div>
     </div>
 
-    <div class="container page-top">
+    <div class="container page-top" style="margin-bottom: 50px;">
 
         <div class="row">
             <div data-th-each="photo : ${post.photos}" class="col-lg-3 col-md-4 col-xs-6">
@@ -45,12 +47,14 @@
 
     <div class="container-fluid">
         <div class="row">
-            <a th:if="${post.id  != '1'}" class="text-left col-md-6" th:href="@{'/post/' + ${post.id - 1}}">
-                <img class="" th:src="'/img/left.png'" alt="Left Arrow" style="width: 50px; height: 50px;"/>Previous
-            </a>
+            <a th:if="${post.id  != '1'}" class="text-left col-md-6 col-xs-3" th:href="@{'/post/' + ${post.id - 1}}">
+                <img class="" th:src="'/img/left.png'" alt="Left Arrow" style="width: 50px; height: 50px;"/>
+                PREVIOUS ADVENTURE</a>
             <a th:if="${post.id  != '5'}" class="text-right"
-               th:classappend="${post.id  != '1'}? 'col-md-6' : 'col-md-12'" th:href="@{'/post/' + ${post.id - (-1)}}">
-                Next<img class="" th:src="'/img/right.png'" alt="Left Arrow" style="width: 50px; height: 50px;"/>
+               th:classappend="${post.id  != '1'}? 'col-md-6 col-xs-3' : 'col-md-12 col-xs-12'"
+               th:href="@{'/post/' + ${post.id - (-1)}}">NEXT ADVENTURE
+                <img class="" th:src="'/img/right.png'" alt="Left Arrow" style="width: 50px;
+                height: 50px;"/>
             </a>
         </div>
     </div>

@@ -34,4 +34,10 @@ public class HomeController {
 
         return "home";
     }
+
+    @RequestMapping("/project")
+    public String getProjectDescription() {
+        return "project";
+    }
+
 }
