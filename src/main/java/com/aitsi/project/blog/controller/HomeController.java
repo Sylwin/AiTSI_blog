@@ -9,7 +9,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * Created by Syl on 2017-11-18.
@@ -22,7 +24,7 @@ public class HomeController {
 
     @RequestMapping("/")
     public String index() {
-        return "index";
+        return "redirect:/home";
     }
 
     @RequestMapping("/home")
@@ -32,6 +34,9 @@ public class HomeController {
         model.addAttribute("authors", authors);
 
         List<Post> posts = reader.retrievePosts();
+        posts = posts.stream()
+                .sorted(Comparator.comparing(Post::getId).reversed())
+                .collect(Collectors.toList());
         model.addAttribute("posts" , posts);
 
         List<Headline> headlines = reader.retrieveHeadlines();
