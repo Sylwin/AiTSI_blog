@@ -1,2 +1,2 @@
 # AiTSI_blog
-University project
+University project - travellers' blog
