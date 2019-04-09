@@ -21,6 +21,11 @@ public class HomeController {
     Reader reader;
 
     @RequestMapping("/")
+    public String index() {
+        return "index";
+    }
+
+    @RequestMapping("/home")
     public String getHomePage(Model model) {
 
         List<Author> authors = reader.retrieveAuthors();
